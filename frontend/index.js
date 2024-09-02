@@ -6,6 +6,8 @@ const rowTemplate = table.querySelector("#row-template");
 const loginError = document.getElementById("login-error");
 const loginButton = document.getElementById("login-button");
 
+console.log("JJFJJFJ")
+
 const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 const indentificationField = document.getElementById("identification-field");
