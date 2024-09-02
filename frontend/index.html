@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level queue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style>
+        .site * {
+            text-align: center;
+        }
+
+        .site-title {
+            margin-top: 20px;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        #row-template {
+            display: none;
+        }
+
+        .login-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .action-buttons {
+            display: none;
+        }
+
+        .modal h5,h6 {
+            margin-bottom: 20px;
+        }
+
+        .modal input {
+            margin-bottom: 10px;
+        }
+
+        .alert {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="alert alert-danger" role="alert" id="login-error">
+                Your password is incorrect.
+              </div>
+              <h5>Login to level queue</h5>
+              <h6>Please request Luca to give you the admin role if required.</h6>
+              <h6>Username</h6>
+              <input type="text" class="form-control" placeholder="User129" id="identification-field">
+              <h6>Password</h6>
+              <input type="password" class="form-control" placeholder="••••••••" id="password-field">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="login-button">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="site">
+
+        <button type="button" class="btn btn-primary login-button" data-bs-toggle="modal" data-bs-target="#loginModal">Admin login</button>
+
+        <h1 class="site-title">Level queue</h1>
+
+        <h2 id="level-indicator">Loading...</h2>
+
+        <div class="action-buttons">
+            <button type="button" class="btn btn-danger" id="clear-all">Clear all</button>
+            <button type="button" class="btn btn-primary" id="next-button">Next</button>
+        </div>
+
+        <table class="table table-striped" id="queue-table">
+            <tr>
+                <th>Position</th>
+                <th>User</th>
+                <th>Time</th>
+                <th>Code</th>
+            </tr>
+
+            <tr id="row-template">
+                <td id="position">Position goes here</td>
+                <td id="username">Username goes here</td>
+                <td id="time">Time goes here</td>
+                <td id="code">Code goes here</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>
