@@ -13,7 +13,7 @@ const passwordField = document.getElementById("password-field");
 
 async function getQueue() {
     try {
-        const response = await fetch("https://queue.lucamakesstuff.com/api/queue", {
+        const response = await fetch("https://queue-api.lucamakesstuff.com/api/queue", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -84,7 +84,7 @@ async function login() {
     }
 
     try {
-        const response = await fetch("https://queue.lucamakesstuff.com/api/login", {
+        const response = await fetch("https://queue-api.lucamakesstuff.com/api/login", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
