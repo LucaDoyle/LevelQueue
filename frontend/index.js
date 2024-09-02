@@ -15,10 +15,6 @@ async function getQueue() {
     try {
         const response = await fetch("https://queue-api.lucamakesstuff.com/api/queue", {
             method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Allow-Control-Allow-Origin": "*"
-            },
             credentials: "include"
         });
 
